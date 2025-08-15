@@ -39,6 +39,6 @@ async def stream_response(topic: str, system_content: str):
     Pass the topic in the query parameter, e.g. /stream?topic=moon
     """
     return StreamingResponse(
-        generate_stream(topic),
+        generate_stream(topic,system_content),
         media_type="text/event-stream"
     )
